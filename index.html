@@ -3,17 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Aniversario ❤️</title>
+<title>Nuestro Aniversario ❤️</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<audio autoplay loop>
+<!-- Pantalla inicial -->
+<div id="inicio" onclick="iniciarPagina()">
+<h1>Tengo algo especial para ti ❤️</h1>
+<p>Toca la pantalla...</p>
+</div>
+
+<audio id="musica" loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<div class="overlay">
+<div class="contenido">
 
 <h1>Feliz 2° Aniversario ❤️</h1>
 <div id="contador"></div>
@@ -24,7 +30,35 @@
 <img src="foto3.jpg">
 </div>
 
-<button onclick="abrirCarta()">💌 Abrir carta</button>
+<div class="sobre" id="sobre">
+<div class="carta">
+<p>
+Amor, gracias por estos dos años maravillosos.
+Desde aquel día mi vida cambió para mejor.
+
+Contigo aprendí que amar es encontrar hogar
+en otra persona.
+
+Quiero seguir construyendo sueños contigo,
+reír juntos, apoyarnos y nunca soltarnos.
+
+Gracias por existir en mi vida.
+
+Te amo hoy, mañana y siempre. ❤️
+</p>
+</div>
+</div>
+
+<div class="final" id="mensajeFinal">
+❤️ Gracias por estos 2 años increíbles ❤️
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
 
 <div class="sobre" id="sobre">
 <div class="carta">
