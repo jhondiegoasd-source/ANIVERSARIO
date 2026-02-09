@@ -1,71 +1,76 @@
 body{
-  margin:0;
-  font-family:'Amatic SC',cursive;
-  overflow:auto;
-  color:white;
-  text-align:center;
+margin:0;
+font-family: Arial;
+text-align:center;
+color:white;
+overflow-x:hidden;
+background: linear-gradient(45deg,#ff758c,#ff7eb3,#fad0c4);
+background-size:400% 400%;
+animation:fondo 12s infinite;
 }
 
-.fondo{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:linear-gradient(45deg,#ff4d6d,#ff758f);
-  z-index:-1;
+@keyframes fondo{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.container{
-  margin-top:40px;
-  padding:10px;
+.overlay{
+padding:20px;
 }
 
-.boton{
-  font-size:32px;
-  cursor:pointer;
-  padding:10px;
+h1{font-size:26px;}
+
+#contador{
+margin:10px;
+font-size:18px;
+}
+
+button{
+padding:12px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4d6d;
+font-size:16px;
+margin:10px;
+}
+
+.galeria{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin:15px;
+}
+
+.galeria img{
+width:120px;
+border-radius:15px;
 }
 
 .carta{
-  opacity:0;
-  max-width:95%;
-  margin:auto;
-  background:rgba(0,0,0,0.3);
-  padding:15px;
-  border-radius:15px;
-  transform:scale(0.7);
-  font-size:20px;
-  line-height:1.3em;
+display:none;
+background:white;
+color:black;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+font-size:14px;
 }
 
-.abrir{
-  opacity:1;
-  transform:scale(1);
-  transition:1.2s;
+/* Corazones */
+.corazon{
+position:fixed;
+top:-10px;
+color:red;
+font-size:20px;
+animation:caer linear forwards;
 }
 
-.carta h2{font-size:28px;}
-.carta h3{font-size:22px;}
-.carta h4{font-size:20px;}
-
-/* corazones */
-.hearts{
-  position:fixed;
-  width:100%;
-  height:100%;
-  pointer-events:none;
+@keyframes caer{
+to{
+transform:translateY(110vh);
+opacity:0;
 }
-
-.heart{
-  position:absolute;
-  top:-10px;
-  color:white;
-  font-size:18px;
-  animation:fall linear forwards;
-}
-
-@keyframes fall{
-  to{
-    transform:translateY(110vh);
-    opacity:0;
-  }
 }
