@@ -1,10 +1,10 @@
 body{
 margin:0;
-font-family: Arial;
+font-family:Arial;
 text-align:center;
 color:white;
 overflow-x:hidden;
-background: linear-gradient(45deg,#ff758c,#ff7eb3,#fad0c4);
+background:linear-gradient(45deg,#ff758c,#ff7eb3,#fad0c4);
 background-size:400% 400%;
 animation:fondo 12s infinite;
 }
@@ -26,16 +26,7 @@ margin:10px;
 font-size:18px;
 }
 
-button{
-padding:12px;
-border:none;
-border-radius:10px;
-background:white;
-color:#ff4d6d;
-font-size:16px;
-margin:10px;
-}
-
+/* Galería sin distorsión */
 .galeria{
 display:flex;
 justify-content:center;
@@ -46,20 +37,46 @@ margin:15px;
 
 .galeria img{
 width:120px;
+height:180px;
+object-fit:cover;
 border-radius:15px;
 }
 
-.carta{
-display:none;
-background:white;
-color:black;
-padding:15px;
+/* Botón */
+button{
+padding:12px;
+border:none;
 border-radius:10px;
-margin-top:15px;
-font-size:14px;
+background:white;
+color:#ff4d6d;
+font-size:16px;
+margin:10px;
+cursor:pointer;
 }
 
-/* Corazones */
+/* Carta animada */
+.sobre{
+margin-top:20px;
+perspective:1000px;
+}
+
+.carta{
+background:white;
+color:black;
+padding:20px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
+transform:rotateX(-90deg);
+transform-origin:top;
+transition:1s;
+}
+
+.sobre.abierto .carta{
+transform:rotateX(0);
+}
+
+/* corazones */
 .corazon{
 position:fixed;
 top:-10px;
@@ -70,6 +87,11 @@ animation:caer linear forwards;
 
 @keyframes caer{
 to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
 transform:translateY(110vh);
 opacity:0;
 }
