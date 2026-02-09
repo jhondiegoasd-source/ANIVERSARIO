@@ -1,30 +1,37 @@
 function abrirCarta(){
-  document.getElementById("carta").classList.add("abrir");
+document.getElementById("carta").style.display="block";
 }
 
-function crearCorazon(){
-  const heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.animationDuration=3+Math.random()*2+"s";
-  document.querySelector(".hearts").appendChild(heart);
+function playMusic(){
+document.getElementById("musica").play();
+}
 
-  setTimeout(()=>heart.remove(),5000);
+/* Contador */
+const inicio = new Date("2024-02-14");
+
+function actualizar(){
+const hoy = new Date();
+const diff = hoy - inicio;
+const dias = Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("contador").innerText =
+"Llevamos juntos " + dias + " días ❤️";
+}
+
+setInterval(actualizar,1000);
+actualizar();
+
+/* Corazones cayendo */
+function crearCorazon(){
+const heart = document.createElement("div");
+heart.classList.add("corazon");
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=3+Math.random()*3+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
 }
 
 setInterval(crearCorazon,300);
-
-const inicio = new Date("2024-02-09"); // cambia fecha
-
-function actualizarTiempo(){
-  const ahora = new Date();
-  const diff = ahora - inicio;
-  const dias = Math.floor(diff/(1000*60*60*24));
-
-  document.getElementById("contador").innerHTML =
-  "Llevamos juntos " + dias + " días ❤️";
-}
-
-setInterval(actualizarTiempo,1000);
-actualizarTiempo();
